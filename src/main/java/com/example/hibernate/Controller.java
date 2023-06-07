@@ -1,5 +1,6 @@
+package com.example.hibernate;
 
-import model.Persons;
+import com.example.hibernate.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,7 @@ public class Controller {
     PersonRepository repository;
 
     @GetMapping("/persons/by-city")
-    public List<Persons> Profile(@RequestParam String city) {
+    public List<Person> Profile(@RequestParam String city) {
         return repository.getPersonsByCity(city);
     }
 }
