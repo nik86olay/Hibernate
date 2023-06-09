@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+
 import java.util.List;
 
 @Repository
@@ -20,8 +21,8 @@ public class PersonRepository {
     private EntityManager entityManager;
 
     @Transactional
-    public List<Person> getPersonsByCity(String city){
-        return entityManager.createQuery("select c from Person c where c.city_of_living = :city", Person.class)
+    public List<Person> getPersonsByCity(String city) {
+        return entityManager.createQuery("from Person where city_of_living = :city", Person.class)
                 .setParameter("city", city)
                 .getResultList();
     }
