@@ -2,7 +2,6 @@ package com.example.hibernate;
 
 import com.example.hibernate.model.Person;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,7 +12,6 @@ import jakarta.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-@Component
 @AllArgsConstructor
 public class PersonRepository {
 
