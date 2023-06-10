@@ -17,7 +17,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
 
     @Column(nullable = false, length = 40)
@@ -36,6 +36,6 @@ public class Person {
     private String phone_number;
 
     @Column(length = 40)
-    private String city_of_living;
+    private String cityOfLiving;
 
 }
