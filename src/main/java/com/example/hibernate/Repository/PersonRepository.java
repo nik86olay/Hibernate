@@ -1,4 +1,4 @@
-package com.example.hibernate;
+package com.example.hibernate.Repository;
 
 import com.example.hibernate.model.Person;
 import lombok.AllArgsConstructor;
