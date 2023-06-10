@@ -25,18 +25,18 @@ public class Controller {
     @GetMapping("/persons/by-city")
     public List<Person> Profile(@RequestParam String city) {
 
-        return repository.findByCityOfLiving(city);
+        return repository.findPersonByCityOfLiving(city);
     }
 
     @Transactional
     @GetMapping("/persons/by-age")
     public List<Person> Profile(@RequestParam int age) {
-        return repository.findByAgeLessThanOrderByAge(age);
+        return repository.findPersonByAgeLessThanOrderByAge(age);
     }
 
     @Transactional
     @GetMapping("/persons/by-nameAndSurname")
     public Optional<Person> Profile(@RequestParam String name, @RequestParam String surname) {
-        return repository.findByNameAndSurname(name, surname);
+        return repository.findPersonByNameAndSurname(name, surname);
     }
 }
