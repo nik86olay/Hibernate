@@ -1,7 +1,7 @@
 package com.example.hibernate.Repository;
 
 import com.example.hibernate.model.Person;
-import jakarta.persistence.criteria.From;
+import javax.persistence.criteria.From;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
