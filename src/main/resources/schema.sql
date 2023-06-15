@@ -2,12 +2,12 @@ create schema pers;
 
     create table pers.PERSONS
     (
-        id             serial primary key,
-        name           varchar(30),
-        surname        varchar(30),
-        age            int not null check ( age > 0 ),
-        phone_number   varchar(30),
-        city_of_living varchar(30)
+        name           varchar(40),
+        surname        varchar(40),
+        age            int not null check ( age >= 0 ),
+        phone_number   varchar(40),
+        city_of_living varchar(40),
+        primary key (name, surname, age)
     );
 
 insert into pers.PERSONS (name, surname, age, phone_number, city_of_living)

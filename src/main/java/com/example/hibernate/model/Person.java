@@ -3,9 +3,8 @@ package com.example.hibernate.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.*;
 
-import javax.validation.constraints.Min;
+import javax.persistence.*;
 
 
 @Data
@@ -15,27 +14,13 @@ import javax.validation.constraints.Min;
 @Table(name = "persons", schema = "pers")
 public class Person {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @EmbeddedId
+    private PersonId personId;
 
+    @Column(name = "phone_number", nullable = false, length = 40)
+    private String phoneNumber;
 
-    @Column(nullable = false, length = 40)
-    private String name;
-
-
-    @Column(nullable = false, length = 40)
-    private String surname;
-
-
-    @Column(nullable = false)
-    @Min(0)
-    private int age;
-
-    @Column(nullable = false, length = 40)
-    private String phone_number;
-
-    @Column(length = 40)
-    private String city_of_living;
+    @Column(name = "city_of_living", length = 40)
+    private String cityOfLiving;
 
 }
